@@ -15,14 +15,14 @@
     $ID = mysql_real_escape_string($_GET["id"]);
     $comments = mysql_real_escape_string($_GET["comments"]);
     
-    print_r($order);
     //prepare user's order for input into the database
     //cast cheese to a boolean
     if($cheese == 'on')
         $cheese = TRUE;
+    else
+        $cheese = FALSE;
     
     // concatenate eggs with the number of eggs and the style of eggs
-    
     if($eggs_number>0)
         $food = $eggs_number." eggs (".$eggs_style.")";
         if($order)
@@ -32,6 +32,8 @@
     if(sizeof($order)>0)
         foreach($order as $item)
         $food = $food.$item.", ";
+    else
+        $order = "none";
 
     
     //prepare sql query
