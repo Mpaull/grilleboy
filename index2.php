@@ -36,7 +36,7 @@
     
     //prepare sql query
     //$sql = "INSERT INTO orders (id, name, order, cheese, comments) VALUES($ID, '$name', '$food', '$cheese', '$comments')";
-    $sql = "INSERT INTO `orders`(`name`, `id`, `comments`, `order`, `cheese`, `time`) VALUES ('morgan', '234536', 'comments', 'order', 'TRUE', '1990-12-12 10:11:20')";
+    $sql = "INSERT INTO `orders`(`name`, `id`, `comments`, `order`, `cheese`) VALUES ('$name', '$ID', '$comments', '$food', '$cheese')";
     if(!mysql_query($sql))
         print("Sorry, there was an error querying the database.");   
 
