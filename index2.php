@@ -28,22 +28,17 @@
         if($order)
             $food = $food.", ";
         
-    foreach($order as $item)
+    
+    if(sizeof($order)>0)
+        foreach($order as $item)
         $food = $food.$item.", ";
-    
-    print($food);
 
     
-    print($cheese);
-
-    print($name);
-    print($ID);
-    print($comments);
-    
-    //sanitize and prepare sql query
-    $sql = "INSERT INTO Grilleboy (id, name, order, cheese, comments) VALUES($ID, '$name', '$order', '$cheese', '$comments')";
+    //prepare sql query
+    //$sql = "INSERT INTO orders (id, name, order, cheese, comments) VALUES($ID, '$name', '$food', '$cheese', '$comments')";
+    $sql = "INSERT INTO `orders`(`name`, `id`, `comments`, `order`, `cheese`, `time`) VALUES ('morgan', '234536', 'comments', 'order', 'TRUE', '1990-12-12 10:11:20')";
     if(!mysql_query($sql))
-        print("Sorry, there was an error.")   
+        print("Sorry, there was an error querying the database.");   
 
     
 ?>
